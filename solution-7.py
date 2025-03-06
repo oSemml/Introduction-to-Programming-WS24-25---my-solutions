@@ -1,27 +1,30 @@
-# Aufgabe 1
+# Task 1
 def index_min(L):
-    min = 0
-    for x in range(1,len(L)):
-        if L[x]<= L[min]:
-            min = x
-    return min
+    # Find the index of the minimum element in the list L
+    min_index = 0
+    for x in range(1, len(L)):
+        if L[x] <= L[min_index]:
+            min_index = x
+    return min_index
 
-# Aufgabe 2 a)
-def temp_abnahme(L):
-    abnahme = 0
-    for i in range(len(L)-1):
-        for j in range(i+1,len(L)):
-            if abnahme < L[i]-L[j]:
-                abnahme = L[i]-L[j]
-    return abnahme
+# Task 2 a)
+def temp_decrease(L):
+    # Find the largest temperature decrease in the list L
+    decrease = 0
+    for i in range(len(L) - 1):
+        for j in range(i + 1, len(L)):
+            if decrease < L[i] - L[j]:
+                decrease = L[i] - L[j]
+    return decrease
 
-# Aufgabe 2 b)
-def temp_abnahme_schnell(L):
-    abnahme = 0
-    max = 0
-    for i in range(1,len(L)):
-        if L[i]>L[max]:
-            max = i
-        elif abnahme < L[max]-L[i]:
-            abnahme = L[max]-L[i]
-    return abnahme
+# Task 2 b)
+def temp_decrease_fast(L):
+    # Find the largest temperature decrease in the list L using an optimized approach
+    decrease = 0
+    max_index = 0
+    for i in range(1, len(L)):
+        if L[i] > L[max_index]:
+            max_index = i
+        elif decrease < L[max_index] - L[i]:
+            decrease = L[max_index] - L[i]
+    return decrease
